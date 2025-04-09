@@ -28,3 +28,11 @@ Table User {
   name varchar(50)
   created_at datetime [default: `CURRENT_TIMESTAMP`]
 }
+
+Table Application {
+  application_id bigint [pk, increment]
+  user_id int [ref: > User.user_id]
+  job_id bigint [ref: > JobPost.job_id]
+  status varchar(50) [default: 'applied'] -- e.g. applied, accepted, rejected
+  applied_at datetime [default: `CURRENT_TIMESTAMP`]
+}
