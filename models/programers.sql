@@ -30,7 +30,7 @@ Table User {
 }
 
 Table Bookmark {
-  user_id int [ref: > User.user_id]
+  user_id bigint [ref: > User.user_id]
   job_id int [ref: > JobPost.job_id]
   saved_at datetime [default: `CURRENT_TIMESTAMP`]
   [pk: user_id, job_id]
